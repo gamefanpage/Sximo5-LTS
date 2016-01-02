@@ -1,0 +1,4 @@
+/* CSS Document */
+
+
+.ajaxLoading { background:#fff url(loading.gif) no-repeat center center; display:none; height:200px; position:absolute; width:100%; opacity: 0.5; left:0; top:0; height: 100%; z-index:9999;}

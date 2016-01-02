@@ -1,0 +1,28 @@
+{
+    "name": "orangehill/iseed",
+    "description": "Generate a new Laravel database seed file based on data from the existing database table.",
+    "keywords": ["laravel", "generators", "seed", "artisan"],
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Tihomir Opacic",
+            "email": "tihomir.opacic@orangehilldev.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master",
+        "illuminate/filesystem": "5.x"
+    },
+    "autoload": {
+        "psr-0": {
+            "Orangehill\\Iseed": "src/"
+        },
+        "classmap": [
+            "src/Orangehill/Iseed/Exceptions.php"
+        ]
+    },
+    "minimum-stability": "dev"
+}
