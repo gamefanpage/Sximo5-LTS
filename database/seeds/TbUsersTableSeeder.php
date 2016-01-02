@@ -36,7 +36,7 @@ class TbUsersTableSeeder extends Seeder {
 			),
 			1 => 
 			array (
-				'id' => 4,
+				'id' => 2,
 				'group_id' => 2,
 				'username' => 'mangopik',
 				'password' => '$2y$10$z4E59lXw3dUau6BRfAHcHe0IHtOl0s08KXnipiopBLkCXT3p/Zq0W',
