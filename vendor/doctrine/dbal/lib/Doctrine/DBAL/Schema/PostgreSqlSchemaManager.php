@@ -339,6 +339,7 @@ class PostgreSqlSchemaManager extends AbstractSchemaManager
 
         $precision = null;
         $scale = null;
+        $jsonb = null;
 
         $dbType = strtolower($tableColumn['type']);
         if (strlen($tableColumn['domain_type']) && !$this->_platform->hasDoctrineTypeMappingFor($tableColumn['type'])) {
@@ -406,6 +407,11 @@ class PostgreSqlSchemaManager extends AbstractSchemaManager
             case 'year':
                 $length = null;
                 break;
+
+            // PostgreSQL 9.4+ only
+            case 'jsonb':
+                $jsonb = true;
+                break;
         }
 
         if ($tableColumn['default'] && preg_match("('([^']+)'::)", $tableColumn['default'], $match)) {
@@ -431,6 +437,10 @@ class PostgreSqlSchemaManager extends AbstractSchemaManager
 
         if (isset($tableColumn['collation']) && !empty($tableColumn['collation'])) {
             $column->setPlatformOption('collation', $tableColumn['collation']);
+        }
+
+        if ($column->getType()->getName() === 'json_array') {
+            $column->setPlatformOption('jsonb', $jsonb);
         }
 
         return $column;
