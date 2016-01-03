@@ -25,3 +25,20 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+### Files Folder permission
+
+```
+#!python
+
+chmod -R 777 /app/Http/pageroutes.php
+chmod -R 777 /app/Http/moduleroutes.php
+chmod -R 777 /app/Http/Controllers/
+chmod -R 777 /app/Http/Models/
+chmod -R 777 /bootstrap/cache/
+chmod -R 777 /public/uploads/
+chmod -R 777 /resources/lang/
+chmod -R 777 /resources/views/
+chmod -R 777 /setting.php
+chmod -R 777 /storage/
+```
