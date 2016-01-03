@@ -3,7 +3,7 @@ define('CNF_APPNAME','Sximo 5');
 define('CNF_APPDESC','PHP Application Builder ');
 define('CNF_COMNAME','My Company name');
 define('CNF_EMAIL','info@mycompanyname.com');
-define('CNF_METAKEY','my site , my company  , Larvel Crud');
+define('CNF_METAKEY','my site , my company  , Laravel Crud');
 define('CNF_METADESC','Write description for your site');
 define('CNF_GROUP','3');
 define('CNF_ACTIVATION','confirmation');
