@@ -109,7 +109,7 @@ class SbclientController extends Controller {
 		} else {
 			$this->data['row'] = $this->model->getColumnTable('sb_clients'); 
 		}
-		$this->data['fields'] 		=  \SiteHelpers::fieldLang($this->info['config']['forms']);
+		$this->data['fields'] 		=   \AjaxHelpers::fieldLang($this->info['config']['forms']);
 		
 		$this->data['id'] = $id;
 		return view('sbclient.form',$this->data);
@@ -129,7 +129,7 @@ class SbclientController extends Controller {
 		} else {
 			$this->data['row'] = $this->model->getColumnTable('sb_clients'); 
 		}
-		$this->data['fields'] 		=  \SiteHelpers::fieldLang($this->info['config']['grid']);
+		$this->data['fields'] 		=   \AjaxHelpers::fieldLang($this->info['config']['grid']);
 		
 		$this->data['id'] = $id;
 		$this->data['access']		= $this->access;
