@@ -1,9 +1,13 @@
 /vendor
 /node_modules
+/public/BingSiteAuth.xml
+/public/google*
+/public/sitemap.xml
 /bower_components
+/_ide_helper.php
+/composer.lock
 Homestead.yaml
 Homestead.json
 auth.json
 .env
 .idea
-et
