@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.1.28 (LTS) on 2016-01-02.
+ * Generated for Laravel 5.1.28 (LTS) on 2016-01-27.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -13131,12 +13131,14 @@ namespace {
          * @param string $table
          * @param string $database
          * @param int $max
+         * @param string $prerunEvent
+         * @param string $postunEvent
          * @return bool 
          * @throws Orangehill\Iseed\TableNotFoundException
          * @static 
          */
-        public static function generateSeed($table, $database = null, $max = 0){
-            return \Orangehill\Iseed\Iseed::generateSeed($table, $database, $max);
+        public static function generateSeed($table, $database = null, $max = 0, $prerunEvent = null, $postrunEvent = null){
+            return \Orangehill\Iseed\Iseed::generateSeed($table, $database, $max, $prerunEvent, $postrunEvent);
         }
         
         /**
@@ -13211,11 +13213,13 @@ namespace {
          * @param string $table
          * @param string $data
          * @param int $chunkSize
+         * @param string $prerunEvent
+         * @param string $postunEvent
          * @return string 
          * @static 
          */
-        public static function populateStub($class, $stub, $table, $data, $chunkSize = null){
-            return \Orangehill\Iseed\Iseed::populateStub($class, $stub, $table, $data, $chunkSize);
+        public static function populateStub($class, $stub, $table, $data, $chunkSize = null, $prerunEvent = null, $postrunEvent = null){
+            return \Orangehill\Iseed\Iseed::populateStub($class, $stub, $table, $data, $chunkSize, $prerunEvent, $postrunEvent);
         }
         
         /**

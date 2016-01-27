@@ -149,10 +149,11 @@ return [
 		Collective\Html\HtmlServiceProvider::class,
 		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 		Orangehill\Iseed\IseedServiceProvider::class,
-		Laracasts\Generators\GeneratorsServiceProvider::class,
 		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-		Way\Generators\GeneratorsServiceProvider::class,
 		Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
+		Laracasts\Generators\GeneratorsServiceProvider::class,
+		Way\Generators\GeneratorsServiceProvider::class,
+		Roumen\Sitemap\SitemapServiceProvider::class,
 
 	],
 

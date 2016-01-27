@@ -1450,13 +1450,16 @@ abstract class AbstractPlatform
      */
     public function getDropConstraintSQL($constraint, $table)
     {
-        if ($constraint instanceof Constraint) {
-            $constraint = $constraint->getQuotedName($this);
+        if (! $constraint instanceof Constraint) {
+            $constraint = new Identifier($constraint);
         }
 
-        if ($table instanceof Table) {
-            $table = $table->getQuotedName($this);
+        if (! $table instanceof Table) {
+            $table = new Identifier($table);
         }
+
+        $constraint = $constraint->getQuotedName($this);
+        $table = $table->getQuotedName($this);
 
         return 'ALTER TABLE ' . $table . ' DROP CONSTRAINT ' . $constraint;
     }
@@ -1471,13 +1474,16 @@ abstract class AbstractPlatform
      */
     public function getDropForeignKeySQL($foreignKey, $table)
     {
-        if ($foreignKey instanceof ForeignKeyConstraint) {
-            $foreignKey = $foreignKey->getQuotedName($this);
+        if (! $foreignKey instanceof ForeignKeyConstraint) {
+            $foreignKey = new Identifier($foreignKey);
         }
 
-        if ($table instanceof Table) {
-            $table = $table->getQuotedName($this);
+        if (! $table instanceof Table) {
+            $table = new Identifier($table);
         }
+
+        $foreignKey = $foreignKey->getQuotedName($this);
+        $table = $table->getQuotedName($this);
 
         return 'ALTER TABLE ' . $table . ' DROP FOREIGN KEY ' . $foreignKey;
     }
@@ -1600,6 +1606,24 @@ abstract class AbstractPlatform
 
         return "COMMENT ON COLUMN " . $tableName->getQuotedName($this) . "." . $columnName->getQuotedName($this) .
             " IS " . $comment;
+    }
+
+    /**
+     * Returns the SQL to create inline comment on a column.
+     *
+     * @param string $comment
+     *
+     * @return string
+     *
+     * @throws \Doctrine\DBAL\DBALException If not supported on this platform.
+     */
+    public function getInlineColumnCommentSQL($comment)
+    {
+        if (! $this->supportsInlineColumnComments()) {
+            throw DBALException::notSupported(__METHOD__);
+        }
+
+        return "COMMENT " . $this->quoteStringLiteral($comment);
     }
 
     /**
@@ -2211,7 +2235,7 @@ abstract class AbstractPlatform
         }
 
         if ($this->supportsInlineColumnComments() && isset($field['comment']) && $field['comment'] !== '') {
-            $columnDef .= " COMMENT " . $this->quoteStringLiteral($field['comment']);
+            $columnDef .= ' ' . $this->getInlineColumnCommentSQL($field['comment']);
         }
 
         return $name . ' ' . $columnDef;
@@ -3412,7 +3436,9 @@ abstract class AbstractPlatform
      */
     public function getTruncateTableSQL($tableName, $cascade = false)
     {
-        return 'TRUNCATE '.$tableName;
+        $tableIdentifier = new Identifier($tableName);
+
+        return 'TRUNCATE ' . $tableIdentifier->getQuotedName($this);
     }
 
     /**

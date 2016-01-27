@@ -495,6 +495,14 @@ class SqlitePlatform extends AbstractPlatform
     /**
      * {@inheritDoc}
      */
+    public function supportsInlineColumnComments()
+    {
+        return true;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getName()
     {
         return 'sqlite';
@@ -505,7 +513,8 @@ class SqlitePlatform extends AbstractPlatform
      */
     public function getTruncateTableSQL($tableName, $cascade = false)
     {
-        $tableName = str_replace('.', '__', $tableName);
+        $tableIdentifier = new Identifier($tableName);
+        $tableName = str_replace('.', '__', $tableIdentifier->getQuotedName($this));
 
         return 'DELETE FROM ' . $tableName;
     }
@@ -565,6 +574,14 @@ class SqlitePlatform extends AbstractPlatform
     public function getForUpdateSql()
     {
         return '';
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getInlineColumnCommentSQL($comment)
+    {
+        return '--' . str_replace("\n", "\n--", $comment) . "\n";
     }
 
     /**

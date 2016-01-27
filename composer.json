@@ -16,16 +16,16 @@
 	"laravel/socialite": "~2.0",
 	"graham-campbell/markdown": "~3.1",
 	"orangehill/iseed": "dev-master",
-	"doctrine/dbal": "^2.6@dev"
+	"doctrine/dbal": "^2.6@dev",
+	"roumen/sitemap": "^2.6"
   },
   "require-dev": {
 	"fzaninotto/faker": "~1.4",
 	"mockery/mockery": "0.9.*",
 	"phpunit/phpunit": "~4.0",
 	"phpspec/phpspec": "~2.1",
-	"laracasts/generators": "^1.1",
 	"xethron/migrations-generator": "dev-l5",
-	"way/generators": "dev-feature/laravel-five-stable"
+    "laracasts/generators": "^1.1"
   },
   "repositories": [
 	{
