@@ -61,10 +61,5 @@ class TemplateController extends Controller {
 
 	}
 
-	static function display()
-	{
-		return view ('core.elfinder.filemanager');
-	}
-
 
 }

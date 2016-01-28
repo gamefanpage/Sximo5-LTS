@@ -28,9 +28,6 @@ Route::get ('/restric', function ()
 Route::resource ('sximoapi', 'SximoapiController');
 Route::group (['middleware' => 'auth'], function ()
 {
-
-	Route::get ('core/elfinder', 'Core\ElfinderController@getIndex');
-	Route::post ('core/elfinder', 'Core\ElfinderController@getIndex');
 	Route::controller ('/dashboard', 'DashboardController');
 	Route::controllers ([
 		'core/users'    => 'Core\UsersController',

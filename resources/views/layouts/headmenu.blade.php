@@ -64,7 +64,6 @@
 					<li><a href="{{ URL::to('dashboard')}}"><i class="fa  fa-laptop"></i> {{ Lang::get('core.m_dashboard') }}</a></li>
 					<li><a href="{{ URL::to('')}}" target="_blank"><i class="fa fa-desktop"></i> Main Site </a></li>
 					<li><a href="{{ URL::to('user/profile')}}"><i class="fa fa-user"></i> {{ Lang::get('core.m_profile') }}</a></li>
-					<li><a href="{{ URL::to('core/elfinder')}}"><i class="fa fa-folder"></i> File Manager </a></li>
 				</ul>
 			</li>
 			<li class="hidden-xxs">
