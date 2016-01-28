@@ -82,7 +82,7 @@
 				 <td>
 					 	@if($access['is_detail'] ==1)
 					 		@if($row->pageID == 1)
-					 		<a href="{{ url()}}" target="_blank" class="tips btn btn-xs btn-white" title="{{ Lang::get('core.btn_view') }}"><i class="fa  fa-search "></i></a>
+					 		<a href="{{ url('')}}" target="_blank" class="tips btn btn-xs btn-white" title="{{ Lang::get('core.btn_view') }}"><i class="fa  fa-search "></i></a>
 					 		@else
 							<a href="{{ url($row->alias)}}" target="_blank" class="tips btn btn-xs btn-white" title="{{ Lang::get('core.btn_view') }}"><i class="fa  fa-search "></i></a>
 							@endif

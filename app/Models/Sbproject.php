@@ -1,5 +1,6 @@
 <?php namespace App\Models;
 
+use App\Models\Sximo;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 

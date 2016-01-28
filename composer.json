@@ -9,12 +9,12 @@
   "type": "project",
   "require": {
 	"php": ">=5.5.9",
-	"laravel/framework": "5.1.*",
+	"laravel/framework": "5.2.*",
 	"barryvdh/laravel-ide-helper": "^2.1",
 	"laravelcollective/html": "~5.0",
 	"mews/captcha": "~2.0",
 	"laravel/socialite": "~2.0",
-	"graham-campbell/markdown": "~3.1",
+	"graham-campbell/markdown": "^6.0",
 	"orangehill/iseed": "dev-master",
 	"doctrine/dbal": "^2.6@dev",
 	"roumen/sitemap": "^2.6"
@@ -25,7 +25,7 @@
 	"phpunit/phpunit": "~4.0",
 	"phpspec/phpspec": "~2.1",
 	"xethron/migrations-generator": "dev-l5",
-    "laracasts/generators": "^1.1"
+	"laracasts/generators": "^1.1"
   },
   "repositories": [
 	{

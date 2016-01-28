@@ -1,10 +1,11 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Controllers\controller;
+use App\Http\Controllers;
 use App\Models\Sbproject;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
-use Validator, Input, Redirect;
+use Redirect;
+use Validator;
 
 
 class SbprojectController extends Controller {
@@ -16,8 +17,6 @@ class SbprojectController extends Controller {
 
 	public function __construct()
 	{
-
-		$this->beforeFilter ('csrf', array('on' => 'post'));
 		$this->model = new Sbproject();
 
 		$this->info = $this->model->makeInfo ($this->module);

@@ -14,7 +14,7 @@
 				>
 					<i class="fa fa-envelope"></i> <span class="notif-alert label label-danger">0</span>
 				</a>
-				<ul class="dropdown-menu dropdown-alerts notif-value" code="{{ url()}}">
+				<ul class="dropdown-menu dropdown-alerts notif-value" code="{{ url('')}}">
 					<li>
 						<div class="text-center link-block"><a href="{{ url('notification') }}"><strong>View All Notification</strong> <i class="fa fa-angle-right"></i></a></div>
 					</li>

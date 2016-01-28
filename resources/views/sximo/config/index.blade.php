@@ -7,7 +7,7 @@
 		<!-- Page header -->
 		<div class="page-header">
 			<div class="page-title">
-				<h3><i class="fa fa-info"></i> SXIMO VERSION <sup class="text-danger"> 5.1.3 </sup></h3>
+				<h3><i class="fa fa-info"></i> SXIMO VERSION <sup class="text-danger"> Reloaded 5.2.0 (Sximo.io Version) </sup></h3>
 			</div>
 
 

@@ -1,8 +1,6 @@
 <?php namespace App\Models\Core;
 
 use App\Models\Sximo;
-use Illuminate\Auth\Authenticatable;
-use Illuminate\Database\Eloquent\Model;
 
 class Users extends Sximo  {
 	

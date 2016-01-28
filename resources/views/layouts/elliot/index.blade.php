@@ -42,7 +42,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ url()}}">
+        <a class="navbar-brand" href="{{ url('')}}">
           <img src="{{ asset('sximo/themes/elliot/images/logo.png')}}">
         </a>
       </div>
