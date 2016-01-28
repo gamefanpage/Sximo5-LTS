@@ -10,7 +10,6 @@
 	<link rel="shortcut icon" href="{{ asset('favicon.ico')}}" type="image/x-icon">
 
 
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300|Titillium+Web:200,300,400' rel='stylesheet' type='text/css'>
 	<link href="{{ asset('sximo/js/plugins/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
 	<link href="{{ asset('sximo/js/plugins/jasny-bootstrap/css/jasny-bootstrap.min.css')}}" rel="stylesheet">
 	<link href="{{ asset('sximo/fonts/awesome/css/font-awesome.min.css')}}" rel="stylesheet">
@@ -46,11 +45,15 @@
 	<script type="text/javascript" src="{{ asset('sximo/js/plugins/toastr/toastr.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('sximo/js/plugins/bootstrap.summernote/summernote.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('sximo/js/simpleclone.js') }}"></script>
+	<link href="{{ asset('sximo/js/plugins/markitup/skins/simple/style.css') }}" rel="stylesheet">
+	<link href="{{ asset('sximo/js/plugins/markitup/sets/default/style.css') }}" rel="stylesheet">
 
 
 	<!-- AJax -->
 	<link href="{{ asset('sximo/js/plugins/ajax/ajaxSximo.css')}}" rel="stylesheet">
 	<script type="text/javascript" src="{{ asset('sximo/js/plugins/ajax/ajaxSximo.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/markitup/jquery.markitup.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/markitup/sets/default/set.js') }}"></script>
 
 	<!-- End Ajax -->
 
@@ -97,11 +100,10 @@
 	</div>
 </div>
 
-
 {{ Sitehelpers::showNotification() }}
+
 <script type="text/javascript">
 	jQuery(document).ready(function ($) {
-
 		$('#sidemenu').sximMenu();
 		$('.spin-icon').click(function () {
 			$(".theme-config-box").toggleClass("show");
@@ -124,6 +126,11 @@
 	});
 
 
+</script>
+<script language="javascript">
+	jQuery(document).ready(function($)	{
+		$('.markItUp').markItUp(mySettings );
+	});
 </script>
 </body>
 </html>

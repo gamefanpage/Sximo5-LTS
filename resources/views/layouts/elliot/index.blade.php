@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="{{ asset('favicon.ico')}}" type="image/x-icon"> 
 
     <!-- Bootstrap -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
     <link href="{{ asset('sximo/themes/elliot/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{ asset('sximo/themes/elliot/css/style.css')}}" rel="stylesheet">
     <link href="{{ asset('sximo/themes/elliot/css/font-icons.css')}}" rel="stylesheet">
@@ -22,7 +21,7 @@
     <script src="{{ asset('sximo/themes/elliot/js/bootstrap.min.js')}}"></script>
     <script src="{{ asset('sximo/themes/elliot/js/jquery.mixitup.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('sximo/js/plugins/parsley.js') }}"></script> 
-    <script type="text/javascript" src="{{ asset('sximo/themes/elliot/js/fancybox/source/jquery.fancybox.js') }}"></script>  
+    <script type="text/javascript" src="{{ asset('sximo/themes/elliot/js/fancybox/source/jquery.fancybox.js') }}"></script>
        
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -163,4 +162,6 @@
   </footer>
 
   </body>
+  <script type="text/javascript" src="http://sximo5.sximobuilder.com/sximo/js/plugins/markitup/jquery.markitup.js"></script>
+  <script type="text/javascript" src="http://sximo5.sximobuilder.com/sximo/js/plugins/markitup/sets/default/set.js"></script>
 </html>
