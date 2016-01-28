@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="{{ asset('favicon.ico')}}" type="image/x-icon"> 
 
     <!-- Bootstrap -->
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
     <link href="{{ asset('sximo/themes/elliot/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{ asset('sximo/themes/elliot/css/style.css')}}" rel="stylesheet">
     <link href="{{ asset('sximo/themes/elliot/css/font-icons.css')}}" rel="stylesheet">
