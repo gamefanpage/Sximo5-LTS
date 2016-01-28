@@ -65,7 +65,7 @@
                	
                 <div class="form-group  " >
                   <label for="lang" class=" control-label  text-left"> Include Language File(s)</label>
-                    @foreach( $file_inc['Resources/lang/en'] as $file )
+                    @foreach( $file_inc['resources/lang/en'] as $file )
                   <div class="checkbox" >
                     <label>{!! Form::checkbox('file_lang[]', $file ) !!} {!! $file !!} </label>
                   </div>
