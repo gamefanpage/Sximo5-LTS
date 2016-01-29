@@ -7,6 +7,8 @@ class Users extends Sximo  {
 	protected $table = 'tb_users';
 	protected $primaryKey = 'id';
 
+	protected $fillable = ['avatar'];
+
 	public function __construct() {
 		parent::__construct();
 		

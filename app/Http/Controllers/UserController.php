@@ -250,17 +250,22 @@ class UserController extends Controller {
 
 		$validator = Validator::make ($request->all (), $rules);
 
+		$this->validate ($request, [
+				'avatar' => 'required|mimes:jpg,jpeg,png,bmp'
+			]
+		);
+
 		if ($validator->passes ())
 		{
 
 
 			if (!is_null (Input::file ('avatar')))
 			{
+
 				$file = $request->file ('avatar');
 				$destinationPath = './uploads/users/';
-				$filename = $file->getClientOriginalName ();
-				$extension = $file->getClientOriginalExtension (); //if you need extension of the file
-				$newfilename = \Session::get ('uid') . '.' . $extension;
+				$filename = time () . $file->getClientOriginalName ();
+				$newfilename = \Session::get ('uid') . '.' . $filename;
 				$uploadSuccess = $request->file ('avatar')->move ($destinationPath, $newfilename);
 				if ($uploadSuccess)
 				{
@@ -282,6 +287,7 @@ class UserController extends Controller {
 			return Redirect::to ('user/profile')->with ('messagetext', 'The following errors occurred')->with ('msgstatus', 'error')
 				->withErrors ($validator)->withInput ();
 		}
+
 
 	}
 
