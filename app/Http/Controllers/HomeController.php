@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Input;
+use Mail;
 use Redirect;
 use Validator;
 
