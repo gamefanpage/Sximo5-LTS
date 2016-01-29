@@ -123,12 +123,12 @@ class HomeController extends Controller {
 	public function  postContact(Request $request)
 	{
 		$rules = array(
-				'name'    => 'required',
-				'sender'  => 'required|email',
-				'phone'   => 'required',
-				'postal'  => 'required',
-				'subject' => 'required',
-				'message' => 'required',
+			'name'    => 'required',
+			'sender'  => 'required|email',
+			'phone'   => 'required',
+			'postal'  => 'required',
+			'subject' => 'required',
+			'message' => 'required',
 		);
 		$validator = Validator::make (Input::all (), $rules);
 		if ($validator->passes ())
@@ -146,7 +146,6 @@ class HomeController extends Controller {
 				$message->to (CNF_CONTACTEMAIL, env ('MAIL_FROM_NAME'));
 				$message->replyTo ($data['sender'], $data['name']);
 			});
-
 
 
 			return Redirect::to ($request->input ('redirect'))->with ('message', \SiteHelpers::alert ('success', 'Thank You , Your message has been sent !'));
