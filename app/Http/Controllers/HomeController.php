@@ -122,25 +122,31 @@ class HomeController extends Controller {
 	public function  postContact(Request $request)
 	{
 		$rules = array(
-			'name'    => 'required',
-			'subject' => 'required',
-			'message' => 'required|min:20',
-			'sender'  => 'required|email'
+				'name'    => 'required',
+				'sender'  => 'required|email',
+				'phone'   => 'required',
+				'postal'  => 'required',
+				'subject' => 'required',
+				'message' => 'required',
 		);
 		$validator = Validator::make (Input::all (), $rules);
 		if ($validator->passes ())
 		{
 
-			$data = array('name' => $request->input ('name'), 'sender' => $request->input ('sender'), 'subject' => $request->input ('subject'), 'notes' => $request->input ('message'));
-			$message = view ('emails.contact', $data);
+			$data = array('name'    => $request->input ('name'), 'sender' => $request->input ('sender'), 'phone' => $request->input ('phone'), 'postal' => $request->input ('postal'),
+						  'subject' => $request->input ('subject'), 'notes' => $request->input ('message'));
 
-			$to = CNF_EMAIL;
 			$subject = $request->input ('subject');
-			$headers = 'MIME-Version: 1.0' . "\r\n";
-			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-			$headers .= 'From: ' . $request->input ('name') . ' <' . $request->input ('sender') . '>' . "\r\n";
+			Mail::send ('emails.contact', $data, function ($message) use ($data, $subject)
+			{
+				/* @var $message \Illuminate\Mail\Message */
+				$message->subject ($subject);
+				$message->from (env ('MAIL_FROM_ADDRESS'), env ('MAIL_FROM_NAME'));
+				$message->to (CNF_CONTACTEMAIL, env ('MAIL_FROM_NAME'));
+				$message->replyTo ($data['sender'], $data['name']);
+			});
 
-			//mail($to, $subject, $message, $headers);
+
 
 			return Redirect::to ($request->input ('redirect'))->with ('message', \SiteHelpers::alert ('success', 'Thank You , Your message has been sent !'));
 
@@ -150,5 +156,4 @@ class HomeController extends Controller {
 				->withErrors ($validator)->withInput ();
 		}
 	}
-
 }
