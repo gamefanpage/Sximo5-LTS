@@ -264,8 +264,9 @@ class UserController extends Controller {
 
 				$file = $request->file ('avatar');
 				$destinationPath = './uploads/users/';
-				$filename = time () . $file->getClientOriginalName ();
-				$newfilename = \Session::get ('uid') . '.' . $filename;
+				$filename = $file->getClientOriginalName ();
+				$extension = $file->getClientOriginalExtension (); //if you need extension of the file
+				$newfilename = \Session::get ('uid') . '.' . $extension;
 				$uploadSuccess = $request->file ('avatar')->move ($destinationPath, $newfilename);
 				if ($uploadSuccess)
 				{

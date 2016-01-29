@@ -9,7 +9,6 @@
 	<meta name="description" content=""/>
 	<link rel="shortcut icon" href="{{ asset('favicon.ico')}}" type="image/x-icon">
 
-
 	<link href="{{ asset('sximo/js/plugins/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
 	<link href="{{ asset('sximo/js/plugins/jasny-bootstrap/css/jasny-bootstrap.min.css')}}" rel="stylesheet">
 	<link href="{{ asset('sximo/fonts/awesome/css/font-awesome.min.css')}}" rel="stylesheet">
@@ -27,11 +26,35 @@
 	<link href="{{ asset('sximo/css/sximo-light-blue.css')}}" rel="stylesheet">
 	<link href="{{ asset('sximo/js/plugins/ajax/ajaxSximo.css')}}" rel="stylesheet">
 
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/jquery.cookie.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/jquery-ui.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/iCheck/icheck.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/select2/select2.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/fancybox/jquery.fancybox.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/prettify.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/parsley.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/datepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/switch.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/bootstrap/js/bootstrap.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/jasny-bootstrap/js/jasny-bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/sximo.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/jquery.form.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/jquery.jCombo.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/toastr/toastr.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/bootstrap.summernote/summernote.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/simpleclone.js') }}"></script>
+	<!-- AJax -->
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/ajax/ajaxSximo.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/markitup/jquery.markitup.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('sximo/js/plugins/markitup/sets/default/set.js') }}"></script>
+	<!-- End Ajax -->
+
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
-
 
 </head>
 <body class="sxim-init">
@@ -71,29 +94,6 @@
 </div>
 
 {{ Sitehelpers::showNotification() }}
-
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/jquery.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/jquery.cookie.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/jquery-ui.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/iCheck/icheck.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/select2/select2.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/fancybox/jquery.fancybox.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/prettify.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/parsley.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/datepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/switch.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/bootstrap.datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/bootstrap/js/bootstrap.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/jasny-bootstrap/js/jasny-bootstrap.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/sximo.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/jquery.form.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/jquery.jCombo.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/toastr/toastr.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/bootstrap.summernote/summernote.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/simpleclone.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/ajax/ajaxSximo.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/markitup/jquery.markitup.js') }}"></script>
-<script type="text/javascript" src="{{ asset('sximo/js/plugins/markitup/sets/default/set.js') }}"></script>
 
 <script type="text/javascript">
 	jQuery(document).ready(function ($) {
