@@ -31,13 +31,13 @@
 
 	 
 <div class="tab-content m-t ">
-		<div class="sbox   animated fadeInUp"> 
-			<div class="sbox-title"> Languange Manager </div>
+		<div class="sbox">
+			<div class="sbox-title"> Language Manager </div>
 			<div class="sbox-content"> 
 
 	<div class="col-sm-8">
 	
-		<h4> Languange Manager </h4>
+		<h4> Language Manager </h4>
 		<hr />
 		<ul class="nav nav-tabs" >
 		@foreach($files as $f)

@@ -23,7 +23,7 @@
 				<li>{{ $error }}</li>
 			@endforeach
 		</ul>
-<div class="sbox animated fadeInRight">
+<div class="sbox">
 	<div class="sbox-title"> <h4> <i class="fa fa-table"></i> </h4></div>
 	<div class="sbox-content"> 	
 

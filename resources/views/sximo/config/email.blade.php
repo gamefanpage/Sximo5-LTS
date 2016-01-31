@@ -36,7 +36,7 @@
 					<div class="tab-pane active use-padding" id="info">
 						{!! Form::open(array('url'=>'sximo/config/email/', 'class'=>'form-vertical row')) !!}
 
-						<div class="col-sm-6 animated fadeInRight">
+						<div class="col-sm-6">
 							<div class="sbox  ">
 								<div class="sbox-title"> {{ Lang::get('core.registernew') }}  </div>
 								<div class="sbox-content">
@@ -57,7 +57,7 @@
 						</div>
 
 
-						<div class="col-sm-6 animated fadeInRight">
+						<div class="col-sm-6">
 							<div class="sbox  ">
 								<div class="sbox-title">  {{ Lang::get('core.forgotpassword') }}</div>
 								<div class="sbox-content">

@@ -37,7 +37,7 @@
 							<div class="sbox-content">
 								{!! Form::open(array('url'=>'sximo/config/save/', 'class'=>'form-horizontal row', 'files' => true)) !!}
 
-								<div class="col-sm-6 animated fadeInRight ">
+								<div class="col-sm-6">
 									<div class="form-group">
 										<label for="ipt" class=" control-label col-md-4">{{ Lang::get('core.fr_domain') }} </label>
 
@@ -168,7 +168,7 @@
 									</div>
 								</div>
 
-								<div class="col-sm-6 animated fadeInRight ">
+								<div class="col-sm-6">
 
 									<div class="form-group">
 										<label for="ipt" class=" control-label col-md-4">Metakey </label>

@@ -195,7 +195,9 @@
 														<td width="22">
 															<img src="https://{{ CNF_DOMAIN }}/assets/email/images/marker-icon.png" alt="location"/>
 														</td>
-														<td style="color: #999999; font-size: 14px; line-height: 18px; font-weight: normal; font-family: helvetica, Arial, sans-serif;">279 Rosewood Drive Fremont, OH
+														<td style="color: #999999; font-size: 14px; line-height: 18px; font-weight: normal; font-family: helvetica, Arial, sans-serif;">279 Rosewood
+														                                                                                                                                Drive Fremont,
+														                                                                                                                                OH
 														                                                                                                                                43420
 														</td>
 													</tr>

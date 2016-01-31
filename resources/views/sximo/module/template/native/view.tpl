@@ -22,7 +22,7 @@
 	   		<a href="{{ URL::to('{class}/update/'.$id.'?return='.$return) }}" class="tips btn btn-xs btn-primary" title="{{ Lang::get('core.btn_edit') }}"><i class="fa fa-edit"></i>&nbsp;{{ Lang::get('core.btn_edit') }}</a>
 			@endif  		   	  
 		</div>
-<div class="sbox animated fadeInRight">
+<div class="sbox">
 	<div class="sbox-title"> <h4> <i class="fa fa-table"></i> </h4></div>
 	<div class="sbox-content"> 	
 

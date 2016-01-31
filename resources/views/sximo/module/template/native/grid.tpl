@@ -19,7 +19,7 @@
 	
 	<div class="page-content-wrapper m-t">	 	
 
-<div class="sbox animated fadeInRight">
+<div class="sbox">
 	<div class="sbox-title"> <h5> <i class="fa fa-table"></i> </h5>
 <div class="sbox-tools" >
 		<a href="{{ url($pageModule) }}" class="btn btn-xs btn-white tips" title="Clear Search" ><i class="fa fa-trash-o"></i> Clear Search </a>

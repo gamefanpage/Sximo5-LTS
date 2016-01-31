@@ -25,12 +25,12 @@ class PagesController extends Controller {
 		$this->access = $this->model->validAccess ($this->info['id']);
 
 		$this->data = array(
-			'pageTitle'  => $this->info['title'],
-			'pageNote'   => $this->info['note'],
-			'pageMeta'     => $this->info['metakey'],
-			'pageMetadesc' => $this->info['metadesc'],
-			'pageModule' => 'core/pages',
-			'return'     => self::returnUrl ()
+				'pageTitle'    => $this->info['title'],
+				'pageNote'     => $this->info['note'],
+				//'pageMeta'     => $this->info['metakey'],
+				//'pageMetadesc' => $this->info['metadesc'],
+				'pageModule'   => 'core/pages',
+				'return'       => self::returnUrl ()
 
 		);
 	}
@@ -39,25 +39,25 @@ class PagesController extends Controller {
 	{
 		if ($this->access['is_view'] == 0)
 			return Redirect::to ('dashboard')
-				->with ('messagetext', \Lang::get ('core.note_restric'))->with ('msgstatus', 'error');
+					->with ('messagetext', \Lang::get ('core.note_restric'))->with ('msgstatus', 'error');
 
 		$sort = (!is_null ($request->input ('sort')) ? $request->input ('sort') : 'pageID');
 		$order = (!is_null ($request->input ('order')) ? $request->input ('order') : 'asc');
-		// End Filter sort and order for query 
-		// Filter Search for query		
+		// End Filter sort and order for query
+		// Filter Search for query
 		$filter = (!is_null ($request->input ('search')) ? '' : '');
 
 
 		$page = $request->input ('page', 1);
 		$params = array(
-			'page'   => $page,
-			'limit'  => (!is_null ($request->input ('rows')) ? filter_var ($request->input ('rows'), FILTER_VALIDATE_INT) : static::$per_page),
-			'sort'   => $sort,
-			'order'  => $order,
-			'params' => $filter,
-			'global' => (isset($this->access['is_global']) ? $this->access['is_global'] : 0)
+				'page'   => $page,
+				'limit'  => (!is_null ($request->input ('rows')) ? filter_var ($request->input ('rows'), FILTER_VALIDATE_INT) : static::$per_page),
+				'sort'   => $sort,
+				'order'  => $order,
+				'params' => $filter,
+				'global' => (isset($this->access['is_global']) ? $this->access['is_global'] : 0)
 		);
-		// Get Query 
+		// Get Query
 		$results = $this->model->getRows ($params);
 
 		// Build pagination setting
@@ -66,13 +66,13 @@ class PagesController extends Controller {
 		$pagination->setPath ('pages');
 
 		$this->data['rowData'] = $results['rows'];
-		// Build Pagination 
+		// Build Pagination
 		$this->data['pagination'] = $pagination;
 		// Build pager number and append current param GET
 		$this->data['pager'] = $this->injectPaginate ();
-		// Row grid Number 
+		// Row grid Number
 		$this->data['i'] = ($page * $params['limit']) - $params['limit'];
-		// Grid Configuration 
+		// Grid Configuration
 		$this->data['tableGrid'] = $this->info['config']['grid'];
 		$this->data['tableForm'] = $this->info['config']['forms'];
 		$this->data['colspan'] = \SiteHelpers::viewColSpan ($this->info['config']['grid']);
@@ -80,7 +80,7 @@ class PagesController extends Controller {
 		$this->data['access'] = $this->access;
 		// Detail from master if any
 
-		// Master detail link if any 
+		// Master detail link if any
 		$this->data['subgrid'] = (isset($this->info['config']['subgrid']) ? $this->info['config']['subgrid'] : array());
 
 		// Render into template
@@ -166,7 +166,7 @@ class PagesController extends Controller {
 
 		if ($this->access['is_detail'] == 0)
 			return Redirect::to ('dashboard')
-				->with ('messagetext', Lang::get ('core.note_restric'))->with ('msgstatus', 'error');
+					->with ('messagetext', Lang::get ('core.note_restric'))->with ('msgstatus', 'error');
 
 		$row = $this->model->getRow ($id);
 		if ($row)
@@ -186,10 +186,10 @@ class PagesController extends Controller {
 	{
 
 		$rules = array(
-			'title'    => 'required',
-			'alias'    => 'required|alpha_dash',
-			'filename' => 'required|alpha',
-			'status'   => 'required',
+				'title'    => 'required',
+				'alias'    => 'required|alpha_dash',
+				'filename' => 'required|alpha',
+				'status'   => 'required',
 
 
 		);
@@ -231,7 +231,7 @@ class PagesController extends Controller {
 		{
 
 			return Redirect::to ('core/pages/update/' . $id)->with ('messagetext', \Lang::get ('core.note_error'))->with ('msgstatus', 'error')
-				->withErrors ($validator)->withInput ();
+					->withErrors ($validator)->withInput ();
 		}
 
 	}
@@ -241,8 +241,8 @@ class PagesController extends Controller {
 
 		if ($this->access['is_remove'] == 0)
 			return Redirect::to ('dashboard')
-				->with ('messagetext', \Lang::get ('core.note_restric'))->with ('msgstatus', 'error');
-		// delete multipe rows 
+					->with ('messagetext', \Lang::get ('core.note_restric'))->with ('msgstatus', 'error');
+		// delete multipe rows
 		if (count ($request->input ('id')) >= 1)
 		{
 			$this->model->destroy ($request->input ('id'));
@@ -250,12 +250,12 @@ class PagesController extends Controller {
 			self::createRouters ();
 
 			return Redirect::to ('core/pages')
-				->with ('messagetext', \Lang::get ('core.note_success_delete'))->with ('msgstatus', 'success');
+					->with ('messagetext', \Lang::get ('core.note_success_delete'))->with ('msgstatus', 'success');
 
 		} else
 		{
 			return Redirect::to ('core/pages')
-				->with ('messagetext', 'No Item Deleted')->with ('msgstatus', 'error');
+					->with ('messagetext', 'No Item Deleted')->with ('msgstatus', 'error');
 		}
 
 	}

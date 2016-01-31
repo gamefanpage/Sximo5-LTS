@@ -22,7 +22,7 @@
 	  <li class="active"><a href="{{ URL::to('groups')}}">Groups</a></li>
 	</ul>	
 
-<div class="sbox animated fadeInRight">
+<div class="sbox">
 	<div class="sbox-title"> <h5> <i class="fa fa-table"></i> <?php echo $pageTitle ;?> <small>{{ $pageNote }}</small></h5>
 		<div class="sbox-tools" >
 

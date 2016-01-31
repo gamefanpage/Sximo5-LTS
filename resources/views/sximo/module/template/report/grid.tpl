@@ -19,7 +19,7 @@
 	
 	<div class="page-content-wrapper m-t">	 	
 
-<div class="sbox animated fadeInRight">
+<div class="sbox">
 	<div class="sbox-title"> <h5> <i class="fa fa-table"></i> </h5>
 <div class="sbox-tools" >
 		@if(Session::get('gid') ==1)

@@ -26,7 +26,7 @@
 								class="fa fa-edit"></i>&nbsp;{{ Lang::get('core.btn_edit') }}</a>
 				@endif
 			</div>
-			<div class="sbox animated fadeInRight">
+			<div class="sbox">
 				<div class="sbox-title">
 					<h4><i class="fa fa-table"></i> <?php echo $pageTitle;?>
 						<small>{{ $pageNote }}</small>

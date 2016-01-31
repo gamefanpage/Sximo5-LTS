@@ -38,7 +38,7 @@
  {!! Form::open(array('url'=>'sximo/config/login/', 'class'=>'form-horizontal')) !!}
 
 	<div class="col-sm-6">
-		<div class="sbox   animated fadeInRight"> 
+		<div class="sbox">
 			<div class="sbox-title"> {{ Lang::get('core.fr_registrationsetting') }} </div>
 			<div class="sbox-content"> 	
   
@@ -127,7 +127,7 @@
  </div>
 
 	<div class="col-sm-6">
-		<div class="sbox   animated fadeInRight"> 
+		<div class="sbox">
 			<div class="sbox-title"> Blocked IP Address </div>
 			<div class="sbox-content "> 	
 					<div class="form-vertical">
