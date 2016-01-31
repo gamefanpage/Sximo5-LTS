@@ -4,6 +4,19 @@ return [
 
 	/*
 	|--------------------------------------------------------------------------
+	| Application Environment
+	|--------------------------------------------------------------------------
+	|
+	| This value determines the "environment" your application is currently
+	| running in. This may determine how you prefer to configure various
+	| services your application utilizes. Set this in your ".env" file.
+	|
+	*/
+
+	'env' => env ('APP_ENV', 'production'),
+
+	/*
+	|--------------------------------------------------------------------------
 	| Application Debug Mode
 	|--------------------------------------------------------------------------
 	|
@@ -13,7 +26,7 @@ return [
 	|
 	*/
 
-	'debug' => env ('APP_DEBUG'),
+	'debug' => env ('APP_DEBUG', false),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +39,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => env ('APP_URL', 'http://localhost'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -39,7 +52,7 @@ return [
 	|
 	*/
 
-	'timezone' => 'Europe/Paris',
+	'timezone' => env ('APP_TIMEZONE', 'UTC'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -52,7 +65,7 @@ return [
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => env ('APP_LOCALE', 'en'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -95,7 +108,7 @@ return [
 	|
 	*/
 
-	'log' => 'single',
+	'log' => env ('APP_LOG', 'daily'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -136,11 +149,8 @@ return [
 		Illuminate\View\ViewServiceProvider::class,
 
 		/*
-		 * Application Service Providers...
+		 * Packages Service Providers...
 		 */
-		App\Providers\AppServiceProvider::class,
-		App\Providers\EventServiceProvider::class,
-		App\Providers\RouteServiceProvider::class,
 		Mews\Captcha\CaptchaServiceProvider::class,
 		Laravel\Socialite\SocialiteServiceProvider::class,
 		GrahamCampbell\Markdown\MarkdownServiceProvider::class,
@@ -152,6 +162,13 @@ return [
 		Laracasts\Generators\GeneratorsServiceProvider::class,
 		Way\Generators\GeneratorsServiceProvider::class,
 		Roumen\Sitemap\SitemapServiceProvider::class,
+
+		/*
+		 * Application Service Providers...
+		 */
+		App\Providers\AppServiceProvider::class,
+		App\Providers\EventServiceProvider::class,
+		App\Providers\RouteServiceProvider::class,
 
 	],
 

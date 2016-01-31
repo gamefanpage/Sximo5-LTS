@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => env('MAIL_FROM_ADDRESS', 'no-reply@yourdomain.com'), 'name' => env('MAIL_FROM_NAME', 'Sximo Reloaded')],
+	'from' => ['address' => env('MAIL_FROM_ADDRESS', 'no-reply@yourdomain.com'), 'name' => env('MAIL_FROM_NAME', 'Sximo')],
 
 	/*
 	|--------------------------------------------------------------------------
