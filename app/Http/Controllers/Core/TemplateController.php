@@ -51,9 +51,11 @@ class TemplateController extends Controller {
 
 
 		$this->data = array(
-			'pageTitle' => 'Templates',
-			'pageNote'  => 'Elements for template',
-			'page'      => $page
+			'pageTitle'    => 'Templates',
+			'pageNote'     => 'Elements for template',
+			'pageMeta'     => 'MetaKeys',
+			'pageMetadesc' => 'Description',
+			'page'         => $page
 
 		);
 

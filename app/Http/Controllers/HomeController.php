@@ -95,7 +95,7 @@ class HomeController extends Controller {
 			$this->data['pageNote'] = 'Welcome To Our Site';
 			$this->data['breadcrumb'] = 'inactive';
 			$this->data['pageMetakey'] = CNF_METAKEY;
-			$this->data['pageMetadesc'] = CNF_METADESC;
+			$this->data['pageMetadesc'] = 'Welcome To Our Site';
 
 			$this->data['pages'] = 'pages.home';
 			$page = 'layouts.' . CNF_THEME . '.index';

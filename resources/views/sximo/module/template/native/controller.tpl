@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
 use Validator, Input, Redirect ; 
 
-
 class {controller}Controller extends Controller {
 
 	protected $layout = "layouts.main";
@@ -17,19 +16,19 @@ class {controller}Controller extends Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->beforeFilter('csrf', array('on'=>'post'));
 		$this->model = new {controller}();
 		{masterdetailmodel}
 		$this->info = $this->model->makeInfo( $this->module);
 		$this->access = $this->model->validAccess($this->info['id']);
 	
 		$this->data = array(
-			'pageTitle'	=> 	$this->info['title'],
-			'pageNote'	=>  $this->info['note'],
-			'pageModule'=> '{class}',
-			'pageUrl'			=>  url('{class}'),
-			'return'	=> self::returnUrl()
-			
+			'pageTitle'		=> $this->info['title'],
+			'pageNote'		=> $this->info['note'],
+			'pageMeta'		=> $this->info['metakey'],
+			'pageMetadesc'	=> $this->info['metadesc'],
+			'pageModule'	=> '{class}',
+			'pageUrl'		=> url('{class}'),
+			'return'		=> self::returnUrl()
 		);
 		{masterdetailinfo}
 	}

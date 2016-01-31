@@ -23,6 +23,7 @@ class PagesController extends Controller {
 		$this->data = array(
 			'pageTitle'  => $this->info['title'],
 			'pageNote'   => $this->info['note'],
+			'pageMeta'   => $this->info['metakey'],
 			'pageModule' => 'pages',
 			'pageUrl'    => url ('pages'),
 			'return'     => self::returnUrl ()
