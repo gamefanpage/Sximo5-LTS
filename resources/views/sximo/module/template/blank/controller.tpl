@@ -1,10 +1,12 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Controllers\controller;
+use App\Http\Controllers;
 use App\Models\{controller};
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
-use Validator, Input, Redirect ;
+use Validator;
+use Input;
+use Redirect;
 
 class {controller}Controller extends Controller {
 

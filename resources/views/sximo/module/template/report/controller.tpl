@@ -1,10 +1,12 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Controllers\controller;
-use App\Models\{class};
+use App\Http\Controllers;
+use App\Models\{controller};
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
-use Validator, Input, Redirect ; 
+use Validator;
+use Input;
+use Redirect;
 
 
 class {controller}Controller extends Controller {
@@ -24,8 +26,6 @@ $this->access = $this->model->validAccess($this->info['id']);
 $this->data = array(
 'pageTitle'        => $this->info['title'],
 'pageNote'        => $this->info['note'],
-'pageMeta'        => $this->info['metakey'],
-'pageMetadesc'    => $this->info['metadesc'],
 'pageModule'    => '{class}',
 'return'        => self::returnUrl()
 
