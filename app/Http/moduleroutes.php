@@ -5,4 +5,5 @@
                     Route::controller('sbclient', 'SbclientController');
                     Route::controller('restapi', 'RestapiController');
                     Route::controller('sbticket', 'SbticketController');
+                    Route::controller('sximoforum', 'SximoforumController');
                     ?>

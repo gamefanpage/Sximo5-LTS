@@ -248,6 +248,27 @@ class TbGroupsAccessTableSeeder extends Seeder
                 'module_id' => 12,
                 'access_data' => '{"is_global":"0","is_view":"0","is_detail":"0","is_add":"0","is_edit":"0","is_remove":"0","is_excel":"0"}',
             ),
+            33 => 
+            array (
+                'id' => 34,
+                'group_id' => 1,
+                'module_id' => 13,
+                'access_data' => '{"is_global":"1","is_view":"1","is_detail":"1","is_add":"1","is_edit":"1","is_remove":"1","is_excel":"1"}',
+            ),
+            34 => 
+            array (
+                'id' => 35,
+                'group_id' => 2,
+                'module_id' => 13,
+                'access_data' => '{"is_global":"1","is_view":"1","is_detail":"1","is_add":"0","is_edit":"0","is_remove":"0","is_excel":"1"}',
+            ),
+            35 => 
+            array (
+                'id' => 36,
+                'group_id' => 3,
+                'module_id' => 13,
+                'access_data' => '{"is_global":"1","is_view":"1","is_detail":"1","is_add":"0","is_edit":"0","is_remove":"0","is_excel":"1"}',
+            ),
         ));
         
         
