@@ -23,7 +23,7 @@ class UserController extends Controller {
 
 		if (CNF_REGIST == 'false') :
 			if (\Auth::check ()):
-				return Redirect::to ('')->with ('message', \SiteHelpers::alert ('success', 'Youre already login'));
+				return Redirect::to ('dashboard')->with ('message', \SiteHelpers::alert ('success', 'You are already logged in'));
 			else:
 				return Redirect::to ('user/login');
 			endif;
@@ -40,11 +40,11 @@ class UserController extends Controller {
 	{
 
 		$rules = array(
-			'firstname'             => 'required|alpha_num|min:2',
-			'lastname'              => 'required|alpha_num|min:2',
-			'email'                 => 'required|email|unique:tb_users',
-			'password'              => 'required|between:6,12|confirmed',
-			'password_confirmation' => 'required|between:6,12'
+				'firstname'             => 'required|alpha_num|min:2',
+				'lastname'              => 'required|alpha_num|min:2',
+				'email'                 => 'required|email|unique:tb_users',
+				'password'              => 'required|between:6,12|confirmed',
+				'password_confirmation' => 'required|between:6,12'
 		);
 		if (CNF_RECAPTCHA == 'true') $rules['recaptcha_response_field'] = 'required|recaptcha';
 
@@ -71,11 +71,11 @@ class UserController extends Controller {
 			$authen->save ();
 
 			$data = array(
-				'firstname' => $request->input ('firstname'),
-				'lastname'  => $request->input ('lastname'),
-				'email'     => $request->input ('email'),
-				'password'  => $request->input ('password'),
-				'code'      => $code
+					'firstname' => $request->input ('firstname'),
+					'lastname'  => $request->input ('lastname'),
+					'email'     => $request->input ('email'),
+					'password'  => $request->input ('password'),
+					'code'      => $code
 
 			);
 			if (CNF_ACTIVATION == 'confirmation')
@@ -135,7 +135,7 @@ class UserController extends Controller {
 
 		if (\Auth::check ())
 		{
-			return Redirect::to ('')->with ('message', \SiteHelpers::alert ('success', 'Youre already login'));
+			return Redirect::to ('dashboard')->with ('message', \SiteHelpers::alert ('success', 'You are already logged in'));
 
 		} else
 		{
@@ -150,8 +150,8 @@ class UserController extends Controller {
 	{
 
 		$rules = array(
-			'email'    => 'required|email',
-			'password' => 'required',
+				'email'    => 'required|email',
+				'password' => 'required',
 		);
 		if (CNF_RECAPTCHA == 'true') $rules['captcha'] = 'required|captcha';
 		$validator = Validator::make (Input::all (), $rules);
@@ -168,7 +168,7 @@ class UserController extends Controller {
 
 					if ($row->active == '0')
 					{
-						// inactive 
+						// inactive
 						\Auth::logout ();
 
 						return Redirect::to ('user/login')->with ('message', \SiteHelpers::alert ('error', 'Your Account is not active'));
@@ -197,7 +197,7 @@ class UserController extends Controller {
 						if (CNF_FRONT == 'false') :
 							return Redirect::to ('dashboard');
 						else :
-							return Redirect::to ('');
+							return Redirect::to ('dashboard');
 						endif;
 
 					}
@@ -207,15 +207,15 @@ class UserController extends Controller {
 			} else
 			{
 				return Redirect::to ('user/login')
-					->with ('message', \SiteHelpers::alert ('error', 'Your username/password combination was incorrect'))
-					->withInput ();
+						->with ('message', \SiteHelpers::alert ('error', 'Your username/password combination was incorrect'))
+						->withInput ();
 			}
 		} else
 		{
 
 			return Redirect::to ('user/login')
-				->with ('message', \SiteHelpers::alert ('error', 'The following  errors occurred'))
-				->withErrors ($validator)->withInput ();
+					->with ('message', \SiteHelpers::alert ('error', 'The following  errors occurred'))
+					->withErrors ($validator)->withInput ();
 		}
 	}
 
@@ -227,9 +227,9 @@ class UserController extends Controller {
 
 		$info = User::find (\Auth::user ()->id);
 		$this->data = array(
-			'pageTitle' => 'My Profile',
-			'pageNote'  => 'View Detail My Info',
-			'info'      => $info,
+				'pageTitle' => 'My Profile',
+				'pageNote'  => 'View Detail My Info',
+				'info'      => $info,
 		);
 
 		return view ('user.profile', $this->data);
@@ -239,8 +239,8 @@ class UserController extends Controller {
 	{
 		if (!\Auth::check ()) return Redirect::to ('user/login');
 		$rules = array(
-			'first_name' => 'required|alpha_num|min:2',
-			'last_name'  => 'required|alpha_num|min:2',
+				'first_name' => 'required|alpha_num|min:2',
+				'last_name'  => 'required|alpha_num|min:2',
 		);
 
 		if ($request->input ('email') != \Session::get ('eid'))
@@ -251,8 +251,8 @@ class UserController extends Controller {
 		$validator = Validator::make ($request->all (), $rules);
 
 		$this->validate ($request, [
-				'avatar' => 'required|mimes:jpg,jpeg,png,bmp'
-			]
+						'avatar' => 'required|mimes:jpg,jpeg,png,bmp'
+				]
 		);
 
 		if ($validator->passes ())
@@ -286,7 +286,7 @@ class UserController extends Controller {
 		} else
 		{
 			return Redirect::to ('user/profile')->with ('messagetext', 'The following errors occurred')->with ('msgstatus', 'error')
-				->withErrors ($validator)->withInput ();
+					->withErrors ($validator)->withInput ();
 		}
 
 
@@ -295,8 +295,8 @@ class UserController extends Controller {
 	public function postSavepassword(Request $request)
 	{
 		$rules = array(
-			'password'              => 'required|between:6,12',
-			'password_confirmation' => 'required|between:6,12'
+				'password'              => 'required|between:6,12',
+				'password_confirmation' => 'required|between:6,12'
 		);
 		$validator = Validator::make ($request->all (), $rules);
 		if ($validator->passes ())
@@ -324,7 +324,7 @@ class UserController extends Controller {
 	{
 
 		$rules = array(
-			'credit_email' => 'required|email'
+				'credit_email' => 'required|email'
 		);
 
 		$validator = Validator::make (Input::all (), $rules);
@@ -347,7 +347,7 @@ class UserController extends Controller {
 
 
 				$affectedRows = User::where ('email', '=', $user->email)
-					->update (array('reminder' => $request->input ('_token')));
+						->update (array('reminder' => $request->input ('_token')));
 
 				return Redirect::to ('user/login')->with ('message', \SiteHelpers::alert ('success', 'Please check your email'));
 
@@ -383,8 +383,8 @@ class UserController extends Controller {
 	public function postDoreset(Request $request, $token = '')
 	{
 		$rules = array(
-			'password'              => 'required|alpha_num|between:6,12|confirmed',
-			'password_confirmation' => 'required|alpha_num|between:6,12'
+				'password'              => 'required|alpha_num|between:6,12|confirmed',
+				'password_confirmation' => 'required|alpha_num|between:6,12'
 		);
 		$validator = Validator::make ($request->all (), $rules);
 		if ($validator->passes ())
@@ -414,7 +414,7 @@ class UserController extends Controller {
 		\Auth::logout ();
 		\Session::flush ();
 
-		return Redirect::to ('')->with ('message', \SiteHelpers::alert ('info', 'Your are now logged out!'));
+		return Redirect::to ('/')->with ('message', \SiteHelpers::alert ('info', 'Your are now logged out!'));
 	}
 
 	function getSocialize($social)
@@ -437,8 +437,8 @@ class UserController extends Controller {
 		if (is_null ($user))
 		{
 			return Redirect::to ('user/login')
-				->with ('message', \SiteHelpers::alert ('error', 'You have not registered yet '))
-				->withInput ();
+					->with ('message', \SiteHelpers::alert ('error', 'You have not registered yet '))
+					->withInput ();
 		} else
 		{
 
