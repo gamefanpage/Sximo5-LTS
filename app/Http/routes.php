@@ -12,7 +12,7 @@
 */
 
 Route::get ('/', 'HomeController@index');
-Route::controller ('home', 'HomeController');
+Route::resource ('home', 'HomeController');
 
 Route::controller ('/user', 'UserController');
 include ('pageroutes.php');
